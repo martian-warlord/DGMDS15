@@ -1,0 +1,17 @@
+http://10.5.5.9:8080/
+http://10.5.5.9:8080/videos/DCIM/100GOPRO/
+
+
+
+http://10.5.5.9/camera/
+
+Photo Mode: http://10.5.5.9/gp/gpControl/command/mode?p=1
+
+Start Video http://10.5.5.9/gp/gpControl/command/shutter?p=1
+
+Power Off: http://10.5.5.9/gp/gpControl/command/system/sleep
+
+DELETE_ALL: http://10.5.5.9/camera/DA
+DELETE_FILE: http://10.5.5.9/camera/DF
+DELETE_GROUP: http://10.5.5.9/camera/DG
+DELETE_LAST_FILE: http://10.5.5.9/camera/DL

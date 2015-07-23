@@ -1,0 +1,161 @@
+<html>
+	<head>
+		
+	</head>
+	<style>
+.button {
+     
+    /*Step 2: Basic Button Styles*/
+    display: block;
+    height: 100px;
+    /*width: 300px;*/
+    /*background: #34696f;*/
+    border: 2px solid rgba(33, 68, 72, 0.59);
+     
+    /*Step 3: Text Styles*/
+    /*color: rgba(0, 0, 0, 0.55);*/
+    text-align: center;
+    font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+}
+</style>
+	<body>
+
+	<div class="button" id="goProGo" style="width: 100%;">Click:Go!</div>
+	<div class="button" id="goProStop" style="width: 100%;">Click: Stop!</div>
+	<div class="button" id="goProTest" style="width: 100%;">Click: Test!</div>
+	<div id="image" style="width: %100;"></div>
+
+	</body>
+<script>
+
+// var imageDiv = document.getElementsByClassName('image'); 
+
+var bgimg_new = "";
+var startframe = 64;
+
+(function() {
+
+
+
+
+
+ function photobomb() {
+
+
+
+///////////////////////////   													TAKES PICTURE
+getJSON('http://10.5.5.9/gp/gpControl/command/shutter?p=1', function(data) {
+  console.log('Something went right.');
+}, function(status) {
+  console.log('Something went wrong.');
+});
+bgimg_new = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+
+                    image.style.background = 'url(' + bgimg_new + ') no-repeat center center fixed';
+                    image.style.backgroundSize = 'cover';
+
+
+    	setTimeout(function(){
+// document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+
+                    image.style.background = 'url(' + bgimg_new + ') no-repeat center center fixed';
+                    image.style.backgroundSize = 'cover';
+},3000)
+
+
+
+
+
+
+  
+};
+
+// /////////////////////// 														SETUP: HANDLES DATA ONCE URL IS CALLED
+
+var getJSON = function(url, successHandler, errorHandler) {
+  var xhr = typeof XMLHttpRequest != 'undefined'
+    ? new XMLHttpRequest()
+    : new ActiveXObject('Microsoft.XMLHTTP');
+  xhr.open('get', url, true);
+  xhr.onreadystatechange = function() {
+    var status;
+    var data;
+    // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+    if (xhr.readyState == 4) { // `DONE`
+      status = xhr.status;
+      if (status == 200) {
+        data = JSON.parse(xhr.responseText);
+        successHandler && successHandler(data);
+      } else {
+        errorHandler && errorHandler(status);
+      }
+    }
+  };
+  xhr.send();
+};
+
+// ////////////////////////////////////////////FUNCTION CALL TO URL
+
+
+
+document.getElementById("goProTest").addEventListener("click", function(){
+	photobomb();
+    	setTimeout(function(){
+// document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+
+
+},3000)
+});
+
+
+document.getElementById("goProGo").addEventListener("click", function(){
+myVar=setInterval(function(){
+
+	photobomb();
+
+startframe = startframe++;
+
+	setTimeout(function(){
+// document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+
+
+},2000)
+	
+
+
+},3000)
+
+
+	
+ 
+// style="-webkit-user-select: none; cursor: zoom-in;" src="http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR0064.JPG" width="564" height="423"
+
+});
+
+document.getElementById("goProStop").addEventListener("click", function(){
+	
+	clearInterval(myVar);
+     
+});
+
+
+	})();
+</script>
+
+
+
+
+<script>
+  window.doubleback = function(data) {
+    alert('SET GO PRO TO CAMERA MODE');
+  };
+</script>
+
+<script src="http://10.5.5.9/gp/gpControl/command/mode?p=1?callback=doubleback">
+</script>
+
+
+
+
+</html>

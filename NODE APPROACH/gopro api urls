@@ -1,0 +1,59 @@
+seems like prefix must be 
+http://10.5.5.9/gp/gpControl/command/
+
+Once connected to the camera, a mini website is accessible at http://10.5.5.9:8080/. Ref 1 reports there is something at 10.5.5.109, but nothing usable.
+
+
+
+PHOTOS ARE HERE!!!!
+
+http://10.5.5.9:8080/videos/DCIM/100GOPRO/
+
+http://10.5.5.9:8080/videos/DCIM/100GOPRO/G0040037.JPG
+
+
+camera mode
+http://10.5.5.9/gp/gpControl/command/mode?p=1
+take picture
+http://10.5.5.9/gp/gpControl/command/shutter?p=1
+
+
+Power Off Camera, URL: http://10.5.5.9/command/system/sleep
+
+delete last file 
+"/command/storage/delete/last"
+
+
+Modes:
+used to wake up camera?
+10.5.5.255
+Video: http://10.5.5.9/gp/gpControl/command/xmode?p=0
+Photo: http://10.5.5.9/gp/gpControl/command/xmode?p=1
+Burst: http://10.5.5.9/gp/gpControl/command/xmode?p=2
+Timelapse: http://10.5.5.9/gp/gpControl/command/xmode?p=3
+
+
+ID: GPCAMERA_FWUPDATE_DOWNLOAD_START, Name: Notify start FW Update File Download, URL: http://10.5.5.9/command/fwupdate/download/start
+ID: GPCAMERA_FWUPDATE_DOWNLOAD_DONE, Name: Notify completion of FW Update File Download, URL: http://10.5.5.9/command/fwupdate/download/done
+ID: GPCAMERA_FWUPDATE_DOWNLOAD_CANCEL, Name: Cancel FW Update File Download, URL: http://10.5.5.9/command/fwupdate/download/cancel
+
+
+
+streaming?
+
+http://10.5.5.9:8080/live/
+
+
+???
+  "start_url": "/gp/gpExec?p1=gpStreamA9&c1=restart",
+            "stop_url": "/gp/gpExec?p1=gpStreamA9&c1=stop"
+
+
+
+            {
+"info version":"1.1",
+"firmware version":"HX1.01.01.00",
+"wifi mac":"f4dd9e08d7c2",
+"camera type":"HERO4 Session",
+"camera serial number":"C3141324545504",
+}
