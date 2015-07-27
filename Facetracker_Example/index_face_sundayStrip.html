@@ -140,16 +140,88 @@
 
 			<p id="convergence"></p>
 
+		</div>
+	</body>
+
+			
+
 <script>
+
+
+var bgimg_new = "";
+var startframe = 120;
+
+
+(function() {
+
+var goprophoto = document.createElement("img");
+
+goprophoto.setAttribute("width", "100%");
+goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+document.getElementById("image").appendChild(goprophoto);
+console.log("first startframe: " + startframe);
+
+ function photobomb() {
+
+  goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
+  goprophoto.setAttribute("width", "100%");
+document.getElementById("image").appendChild(goprophoto);
+startframe = startframe + 1;
+console.log("startframe: " + startframe);
+
+
+///////////////////////////   													TAKES PICTURE
+getJSON('http://10.5.5.9/gp/gpControl/command/shutter?p=1', function(data) {
+  console.log('Something went right.');
+}, function(status) {
+  console.log('Something went wrong.');
+});
+
+
+  
+};
+
+// /////////////////////// 														SETUP: HANDLES DATA ONCE URL IS CALLED
+
+var getJSON = function(url, successHandler, errorHandler) {
+  var xhr = typeof XMLHttpRequest != 'undefined'
+    ? new XMLHttpRequest()
+    : new ActiveXObject('Microsoft.XMLHTTP');
+  xhr.open('get', url, true);
+  xhr.onreadystatechange = function() {
+    var status;
+    var data;
+    // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
+    if (xhr.readyState == 4) { // `DONE`
+      status = xhr.status;
+      if (status == 200) {
+        data = JSON.parse(xhr.responseText);
+        successHandler && successHandler(data);
+      } else {
+        errorHandler && errorHandler(status);
+      }
+    }
+  };
+  xhr.send();
+};
+
+// ////////////////////////////////////////////FUNCTION CALL TO URL
+
 document.getElementById("goProTest").addEventListener("click", function(){
-	photobomb();
-
-
-
+	// photobomb();
 setTimeout(function(){
 animateClean();
 },5000)
 });
+
+
+
+
+
+
+	})();
+
+
 </script>
 
 
@@ -297,6 +369,15 @@ console.log(er[3]);
 				}
 
 		</script>
-		</div>
-	</body>
+<script>
+  window.doubleback = function(data) {
+    alert('SET GO PRO TO CAMERA MODE');
+  };
+</script>
+
+<script src="http://10.5.5.9/gp/gpControl/command/mode?p=1?callback=doubleback">
+</script>
+
+
+
 </html>
