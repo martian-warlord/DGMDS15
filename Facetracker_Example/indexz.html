@@ -3,18 +3,6 @@
 		
 	</head>
 	<style>
-
-    img {
-        /*display: none;*/
-    }
-    
-    canvas {
-        display: none;
-        border: 1px dotted black;
-    }
-
-
-
 .button {
      
     /*Step 2: Basic Button Styles*/
@@ -32,18 +20,30 @@
 }
 </style>
 	<body>
-<div class="button" id="goProClear" style="width: 100%; color:white; background-color:red;">CLEAR BUFFER</div>
+
 	<div class="button" id="goProGo" style="width: 100%;">Click:Go!</div>
 	<div class="button" id="goProStop" style="width: 100%;">Click: Stop!</div>
 	<div class="button" id="goProTest" style="width: 100%;">Click: Test!</div>
-	<div id="image" ></div>
-
-  <div id="image" style="width: %100;"></div>
-     <!-- <img src='./GOPR0059.JPG'></img>  -->
-    <!-- <canvas width='1250px' height='1000px'></canvas> -->
+	<div id="image" style="width: %100;"></div>
 
 	</body>
-<script src="./annyang.min.js"></script>
+  <script src="./annyang.min.js"></script>
+
+  <script> /////////////////////////////////////////////////////////////////////  VOICE
+if (annyang) {
+  // Let's define a command.
+  var commands = {
+    'go': function() { console.log('go!'); }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+}
+</script>
+
 
 
 
@@ -53,20 +53,20 @@
 // var imageDiv = document.getElementsByClassName('image'); 
 
 var bgimg_new = "";
-var startframe = 126;
+var startframe = 86;
 
 (function() {
 
 var goprophoto = document.createElement("img");
 
 goprophoto.setAttribute("width", "100%");
-goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR0" + startframe + ".JPG";
+goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
 document.getElementById("image").appendChild(goprophoto);
 console.log("first startframe: " + startframe);
 
  function photobomb() {
 
-  goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR0" + startframe + ".JPG";
+  goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
   goprophoto.setAttribute("width", "100%");
 document.getElementById("image").appendChild(goprophoto);
 startframe = startframe + 1;
@@ -74,19 +74,10 @@ console.log("startframe: " + startframe);
 
 
 ///////////////////////////   													TAKES PICTURE
-
-
-
-
-getJSON('http://10.5.5.9/gp/gpControl/command/mode?p=1/shutter?p=1', function(data) {
+getJSON('http://10.5.5.9/gp/gpControl/command/shutter?p=1', function(data) {
   console.log('Something went right.');
 }, function(status) {
   console.log('Something went wrong.');
-
-//   startframe = startframe - 1;
-// console.log("startframe: " + startframe
-
-  // );
 //   goprophoto.src = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
 // document.getElementById("image").appendChild(goprophoto);
 });
@@ -108,7 +99,6 @@ var getJSON = function(url, successHandler, errorHandler) {
     ? new XMLHttpRequest()
     : new ActiveXObject('Microsoft.XMLHTTP');
   xhr.open('get', url, true);
-
   xhr.onreadystatechange = function() {
     var status;
     var data;
@@ -132,27 +122,11 @@ var getJSON = function(url, successHandler, errorHandler) {
 
 document.getElementById("goProTest").addEventListener("click", function(){
 	photobomb();
-//     	setTimeout(function(){
-// // document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
-
-//     var d = new Date();
-//     var fileTime = d.toLocaleTimeString();
-//     // var fileTime = d.getUTCMilliseconds()
-
-//     fileNamer = "image" + fileTime + ".jpg"
+    	setTimeout(function(){
+// document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
 
 
-//         var img = document.querySelector('img');
-//         img.setAttribute('crossOrigin', 'anonymous');
-//         var canvas = document.querySelector('canvas');
-//         var context = canvas.getContext('2d');
-//         context.drawImage(img, 0, 0);
-//       canvas.toBlob(function(blob) {
-//         saveAs(blob, fileNamer);
-//       });
-// },5000)
-
-
+},5000)
 });
 
 
@@ -187,59 +161,20 @@ document.getElementById("goProStop").addEventListener("click", function(){
 
 
 
-
-
-document.getElementById("goProClear").addEventListener("click", function(){
-
-
-getJSONclear('http://10.5.5.9/command/storage/delete/all', function(data) {
-  console.log('Go Pro Memory Card Cleared.');
-}, function(status) {
-  console.log('Problem with Go Pro Memory Clear.');
-});
-
-var getJSONclear = function(url, successHandler, errorHandler) {
-  var xhr = typeof XMLHttpRequest != 'undefined'
-    ? new XMLHttpRequest()
-    : new ActiveXObject('Microsoft.XMLHTTP');
-  xhr.open('get', url, true);
-  
-  xhr.onreadystatechange = function() {
-    var status;
-    var data;
-    // https://xhr.spec.whatwg.org/#dom-xmlhttprequest-readystate
-    if (xhr.readyState == 4) { // `DONE`
-      status = xhr.status;
-      if (status == 200) {
-        data = JSON.parse(xhr.responseText);
-        successHandler && successHandler(data);
-      } else {
-        errorHandler && errorHandler(status);
-      }
-    }
-  };
-  xhr.send();
-};
-
- });
-
-
-
-
-
-
-
-
-
 	})();
-
-
 </script>
 
 
 
 
+<script>
+  window.doubleback = function(data) {
+    alert('SET GO PRO TO CAMERA MODE');
+  };
+</script>
 
+<script src="http://10.5.5.9/gp/gpControl/command/mode?p=1?callback=doubleback">
+</script>
 
 
 
