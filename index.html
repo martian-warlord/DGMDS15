@@ -3,6 +3,18 @@
 		
 	</head>
 	<style>
+
+    img {
+        /*display: none;*/
+    }
+    
+    canvas {
+        display: none;
+        border: 1px dotted black;
+    }
+
+
+
 .button {
      
     /*Step 2: Basic Button Styles*/
@@ -24,9 +36,38 @@
 	<div class="button" id="goProGo" style="width: 100%;">Click:Go!</div>
 	<div class="button" id="goProStop" style="width: 100%;">Click: Stop!</div>
 	<div class="button" id="goProTest" style="width: 100%;">Click: Test!</div>
-	<div id="image" style="width: %100;"></div>
+	<div id="image" ></div>
+
+  <!-- <div id="image" style="width: %100;"></div> -->
+     <img src='./GOPR0059.JPG'></img> 
+    <canvas width='1250px' height='1000px'></canvas>
 
 	</body>
+  <script src='./FileSaver.min.js'></script>
+  <script src='./blob.js'></script>
+
+    <script>
+    window.addEventListener('load', function() {
+
+    var d = new Date();
+    var fileTime = d.toLocaleTimeString();
+    // var fileTime = d.getUTCMilliseconds()
+
+    fileNamer = "image" + fileTime + ".jpg"
+
+
+        var img = document.querySelector('img');
+        img.setAttribute('crossOrigin', 'anonymous');
+        var canvas = document.querySelector('canvas');
+        var context = canvas.getContext('2d');
+        context.drawImage(img, 0, 0);
+      canvas.toBlob(function(blob) {
+        saveAs(blob, fileNamer);
+      });
+    });
+    </script>
+
+
 <script>
 
 // var imageDiv = document.getElementsByClassName('image'); 
@@ -54,14 +95,14 @@ console.log("startframe: " + startframe);
 
 ///////////////////////////   													TAKES PICTURE
 
-getJSON('http://10.5.5.9/gp/gpControl/command/mode?p=1', function(data) {
-  console.log('Something went right.');
-}, function(status) {
-  console.log('Something went wrong.');
-});
+// getJSON('http://10.5.5.9/gp/gpControl/command/mode?p=1', function(data) {
+//   console.log('Something went right.');
+// }, function(status) {
+//   console.log('Something went wrong.');
+// });
 
 
-getJSON('http://10.5.5.9/gp/gpControl/command/shutter?p=1', function(data) {
+getJSON('http://10.5.5.9/gp/gpControl/command/mode?p=1/shutter?p=1', function(data) {
   console.log('Something went right.');
 }, function(status) {
   console.log('Something went wrong.');
@@ -116,8 +157,24 @@ document.getElementById("goProTest").addEventListener("click", function(){
     	setTimeout(function(){
 // document.getElementById("image").innerHTML = "http://10.5.5.9:8080/videos/DCIM/100GOPRO/GOPR00" + startframe + ".JPG";
 
+    var d = new Date();
+    var fileTime = d.toLocaleTimeString();
+    // var fileTime = d.getUTCMilliseconds()
 
+    fileNamer = "image" + fileTime + ".jpg"
+
+
+        var img = document.querySelector('img');
+        img.setAttribute('crossOrigin', 'anonymous');
+        var canvas = document.querySelector('canvas');
+        var context = canvas.getContext('2d');
+        context.drawImage(img, 0, 0);
+      canvas.toBlob(function(blob) {
+        saveAs(blob, fileNamer);
+      });
 },5000)
+
+
 });
 
 
