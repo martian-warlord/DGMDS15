@@ -1,0 +1,111 @@
+<form action="https://up.flickr.com/photos/upload/transfer/" method="post" enctype="multipart/form-data" onsubmit="return upload_submit_form();" id="upload_form">
+					<input type="hidden" name="done" value="1">
+					<input type="hidden" name="complex_perms" value="0">
+					<input type="hidden" name="magic_cookie" value="d185824e120f7e75bfc97cec1c0ce386e129164ca273b23faa1c7e0e3b75f218">
+					
+				  	
+					<h4 style="margin-top: 5px; margin-bottom: 10px;">Find the file(s) you want on your computer</h4>
+					
+								
+				
+               <div id="file-inputs" class="fieldset">
+					<p>1. <label for="file1" class="obscured">Choose an image to upload</label><input type="file" name="file1" id="file1"></p>
+					<p>2. <label for="file2" class="obscured">Choose an image to upload</label><input type="file" name="file2" id="file2"></p>
+					<p>3. <label for="file3" class="obscured">Choose an image to upload</label><input type="file" name="file3" id="file3"></p>
+					<p>4. <label for="file4" class="obscured">Choose an image to upload</label><input type="file" name="file4" id="file4"></p>
+					<p>5. <label for="file5" class="obscured">Choose an image to upload</label><input type="file" name="file5" id="file5"></p>
+					<p>6. <label for="file6" class="obscured">Choose an image to upload</label><input type="file" name="file6" id="file6"></p>
+               </div>
+               
+					<h4><label for="tags">Add tags to the whole batch?</label> <span style="display: none;" id="tooltip_1437703807_0">A tag is a simple way for you to label your photos so they are easy to sort and retrieve. There are no rules, just use whatever words you find useful. Separate each tag with a space: <i>dog Ken Nancy barbecue</i>. Or to join 2 words together in one tag, use double quotes: <i>"Ken's party"</i>. (By the way, we strip out words like "and", "at", "the", "my", "in" and "to" automatically.)</span><span class="Tip">[<a href="#" onclick="this.blur(); show_tooltip(this, 'tooltip_1437703807_0', 387); return false;">?</a>]</span></h4>
+					<p class="fieldset"><input type="text" name="tags" id="tags" size="40" value="" style="width: 230px;"></p>
+
+										
+			
+			                <h4>Choose the privacy settings <span style="display: none;" id="tooltip_1437703807_1">In Flickr, photos can be either public or private. Each visitor to your photostream will only see the photos you want them to see. Public photos are available to everyone. Anyone can share them, anyone can mark them as a favorite, and anyone can post them to weblogs outside of Flickr. Private photos are different. Only you can share your private photos. They cannot be posted to weblogs outside of Flickr. However, they can show up in your photostream, if you want them to. Photos that are set to "completely private" will only show up for you. <b>Can I change privacy settings later?</b> Yes, you can change the privacy settings on your photos at any time. You can even change the privacy levels on all the photos in a batch all at once.</span><span class="Tip">[<a href="#" onclick="this.blur(); show_tooltip(this, 'tooltip_1437703807_1', 740); return false;">?</a>]</span></h4>
+			                <div class="fieldset">
+                             	<input type="radio" name="is_public_0" id="is_private_0" value="0" onchange="_change_privacy(0);" onclick="_change_privacy(0);"> <label for="is_private_0">Private <span class="note">(only you see them)</span></label><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="is_friend_0" id="is_friend_0" value="1" disabled=""> <label for="is_friend_0">Visible to Friends</label><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="is_family_0" id="is_family_0" value="1" disabled=""> <label for="is_family_0">Visible to Family</label><br>
+	<input type="radio" name="is_public_0" id="is_public_0" value="1" onchange="_change_privacy(0);" onclick="_change_privacy(0);" checked=""> <label for="is_public_0">Public <span class="note">(anyone can see them)</span></label><br>
+<script type="text/javascript">
+<!--
+_change_privacy(0);
+//-->
+</script>
+                            </div>
+					<div id="moderation" class="">
+					    
+					    <div id="moderation_toggle" style="display: block;">
+					    <p class="moderation_show"><a href="#" onclick="return upPage.toggle()" class="arrowRight">Show advanced settings...</a></p>
+					    <p class="moderation_hide"><a href="#" onclick="return upPage.toggle()" class="arrowDown">Hide advanced settings</a> (<a href="/help/filters" style="text-decoration: none;">More info</a>)</p>
+				        </div>
+				    
+					    <div id="moderation_settings">
+						<h4>Set safety level</h4>
+						
+						<div class="fieldset">
+						<div>
+						    <input type="radio" name="safety_level" id="safe" value="0" checked="checked"> <label for="safe">Safe</label> 
+						    <small>(your default)</small>						</div>
+						<div>
+						    <input type="radio" name="safety_level" id="moderate" value="1"> <label for="moderate">Moderate</label>
+						    						</div>
+						<div>
+						    <input type="radio" name="safety_level" id="restricted" value="2"> <label for="restricted">Restricted</label>
+						    						</div>
+						
+						
+						
+
+						<div id="video_restricted_basic" class="">
+						 <div class="content">
+						  <img src="/images/icon_alert.png" alt="" class="icon">
+						  <div class="copy">
+						   <p>Please note that "restricted" video content isn’t permitted on Flickr. Only "safe" or "moderate" videos may be uploaded and shared.</p>
+						   <p>As per our <a href="/help/guidelines/">Community Guidelines</a>, you must take the time to moderate your content on Flickr. If you upload a "restricted" video under a different safety level, you risk action against your account that may include termination.</p>
+						  </div>
+						 </div>
+						</div>
+					    <!-- if JS on, hide warning -->
+						<script type="text/javascript">_ge('video_restricted_basic').className = '';</script>
+
+												
+
+												
+				        </div>
+						
+						<h4>Set content type</h4>
+
+                        <div class="fieldset">
+						<div>
+							<input type="radio" name="content_type" id="photos" value="0" checked="checked">
+															<label for="photos">Photos / Videos</label>
+												    	<small>(your default)</small>						</div>
+						<div>
+						    <input type="radio" name="content_type" id="screenshots" value="1"> <label for="screenshots">Screenshots</label>
+						    						</div>
+						<div>
+						    <input type="radio" name="content_type" id="other" value="2"> <label for="other">Art, illustration, CGI, or other non-photographic images</label>
+						    						</div>
+					    </div>
+						
+						<h4>Hide these images from public searches?</h4>
+						<div class="fieldset">
+						<div>
+						    <input type="checkbox" name="hidden" id="hidden" value="1"> <label for="hidden">Yes</label>
+						</div>
+					    </div>
+					</div>
+					<script type="text/javascript">
+					    upPage.toggle(); 
+					    _ge('moderation_toggle').style.display = "block";
+					    if (typeof assign_content_type_handlers != 'undefined') assign_content_type_handlers();
+					</script>
+						
+					</div>
+
+					<p><input id="start-upload" type="submit" name="Submit" value="UPLOAD" class="Butt" onclick="return upload_click_button();"></p>
+					<p>Or, <a href="/photos/134799772@N05/">cancel and return to your photostream</a>.</p>
+
+					</form>

@@ -7,15 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "index.html",
-			"settings":
-			{
-				"buffer_size": 10,
-				"line_ending": "Unix",
-				"name": "index.html"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -66,15 +57,36 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/DGMDS15 final"
 	],
 	"file_history":
 	[
-		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/a-story-in-pomes/examples/index.html",
-		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/martian-warlord.github.io/index.html",
-		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/a-story-in-pomes/pomes/pomes.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/Ummcounter/webapp/live.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/Ummcounter/webapp/Camera_Trigger_Word.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/gopro.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/test.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/Go_Flick_Save_ver2.html",
+		"/Users/joshuacooperdarlington/Downloads/flickrapi-js-master/README.md",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/gPro.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/Flickz.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/blob.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/flickr_test.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/Ummcounter/README.md",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/new Flick node friday/index.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/meteor Sandbox/simple-todos/simple-todos.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/meteor Sandbox/simple-todos/simple-todos.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/meteor Sandbox/simple-todos/simple-todos.css",
 		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/DGMDS15 final/index.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/nodeEXP/server/package.json",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/nodeEXP/server/script.js",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/nodeEXP/node_modules/express/package.json",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/DGMDS15 final/flickr upload form",
+		"/Users/joshuacooperdarlington/Downloads/Ex_Files_Node.js_FL/Exercise Files/3 Modules/4 Maintaining modules/html/package.json",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/nodeEXP/package.json",
+		"/Users/joshuacooperdarlington/Downloads/syl22-00-pocketsphinx.js-e1ebf16/README.md",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/a-story-in-pomes/pomes/pomes.js",
 		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/DGMDS15 final/gopro api urls",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/martian-warlord.github.io/index.html",
+		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/a-story-in-pomes/examples/index.html",
 		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/martian-warlord.github.io/test.js",
 		"/Users/joshuacooperdarlington/Desktop/sample.html",
 		"/Users/joshuacooperdarlington/Documents/HARVARD DGMD S-15/a-story-in-pomes/pomes/index.html",
@@ -97,7 +109,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -111,6 +123,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"wordList",
+			"ama",
 			"relax",
 			"rel",
 			"fierce",
@@ -150,37 +164,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10,
-								10
-							]
-						],
-						"settings":
-						{
-							"auto_name": "index.html",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
